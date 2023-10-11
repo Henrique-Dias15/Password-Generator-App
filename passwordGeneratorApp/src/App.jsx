@@ -17,6 +17,25 @@ function App() {
           </div>
           <input type="range" id='scrollBar' />
         </div>
+
+        <div id='checkBoxes'>
+          <div>
+            <input type='checkbox' id='includeUppercase'/>
+            <label htmlFor="includeUppercase">Include Uppercase Letters</label>
+          </div>
+          <div>
+            <input type='checkbox' id='includeLowercase'/>
+            <label htmlFor="includeLowercase">Include Lowercase Letters</label>
+          </div>
+          <div>
+            <input type='checkbox' id='includeNumbers'/>
+            <label htmlFor="includeNumbers">Include Numbers</label>
+          </div>
+          <div>
+            <input type='checkbox' id='includeSymbols'/>
+            <label htmlFor="includeSymbols">Include Symbols</label>
+          </div>
+        </div>
       </div>
     </div>
   );
