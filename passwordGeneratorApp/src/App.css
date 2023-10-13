@@ -42,7 +42,7 @@
 }
 
 .Configs {
-    height: 30rem;
+    height: 28rem;
     width: 30rem;
     background-color: #24232B ;
     padding: 1.5rem;
@@ -70,22 +70,37 @@
     appearance: none;
     color: #fff;
     cursor: pointer;
-}
+    accent-color: white;
+  }
 
-#length input::-webkit-slider-runnable-track {
+
+ #length input::-webkit-slider-runnable-track {
     background-color: #18161F;
+    background-image: linear-gradient(#A4FFAB,#A4FFAB);
+    background-size: 30% 100%;
+    background-repeat: no-repeat;
     height: 0.5rem;
-}
+    
+} 
 
-#length input::-webkit-slider-thumb {
-    appearance: none;
+ #length input::-webkit-slider-thumb {
+    -webkit-appearance: none;
     height: 1.5rem;
     width: 1.5rem;
     background-color: #E6E5EA;
     border-radius: 50%;
     margin-top: -8px;
+    
+}
+#length input:hover::-webkit-slider-thumb{
+    background:  #18161F;
+    border: 2px solid #A4FFAB;
+    -webkit-appearance: none;
 }
 
+
+
+ 
 #checkBoxes {
     height: 10rem;
     display: flex;
@@ -121,7 +136,106 @@
 	font-size: 1rem;
     font-weight: bold;
 	color: #13121A;
+    position: relative;
+    bottom: 3px;
 }
+
+
+#strength{
+ 
+    padding: 1rem;
+    background-color: #13121A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#strength h2{
+    color: #54535B;
+    font-size: 1rem;
+}
+
+ p{
+    color: white;
+}
+#strength p{
+    text-transform: uppercase;
+    line-height: 1.485rem;
+}
+
+.fs-2{
+    font-size: 1.5rem;
+    line-height: 1.485rem;
+}
+
+.strengthlvl{
+    align-items: center;
+    display: flex;
+}
+
+.strengthlvl p{
+    margin-left: 5px;
+}
+.bars{
+    width: 10px;
+    height: 28px;
+    border: 2px solid white;
+    margin-left: 0.5rem;
+    
+}
+.button {
+    width: 100%;
+    padding-top: 1.125rem;
+    padding-bottom: 1.125rem;
+    border: 2px solid #A4FFAB;
+    background-color: #A4FFAB;
+  }
+  
+.button:hover {
+    background-color: #18161F;
+    color: #A4FFAB;
+    cursor: pointer;
+  }
+  
+.button svg {
+    margin-left: 1rem;
+  }
+  
+.button:hover path {
+    fill: #A4FFAB;
+  }
+.generateBtn{
+    margin-top: 30px;
+}
+#generateBtn{
+    text-transform: uppercase;
+    line-height: 1.485rem;
+    font-size: 1rem;
+
+}
+
+
+.tooWeak {
+    background-color: red;
+    border: 2px solid red;
+  }
+  
+  .weak {
+    background-color: orange;
+    border: 2px solid orange;
+  }
+  
+  .medium {
+    background-color: yellow;
+    border: 2px solid yellow;
+  }
+  
+  .strong {
+    background-color: #A4FFAB;
+    border: 2px solid #A4FFAB;
+  }
+
 
 /* #checkBoxes input:checked:after {
     content: '\2714';
