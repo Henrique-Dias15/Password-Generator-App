@@ -8,7 +8,8 @@ function App() {
       <h1>Password Generator</h1>
 
       <div class='Resultado'>
-        <p>P4$5W0rD!</p>
+        <p id='result'>P4$5W0rD!</p>
+        <button id='copyButton'></button>
       </div>
 
       <div class='Configs'>

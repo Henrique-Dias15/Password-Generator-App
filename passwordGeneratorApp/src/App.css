@@ -31,6 +31,7 @@
 
 .Resultado {
     display: flex;
+    justify-content: space-between;
     background-color: #24232B;
     height: 5rem;
     width: 30rem;
@@ -39,6 +40,20 @@
     padding: 0.5rem 1rem;
     color: #54535B;
     margin-bottom: 2rem;
+}
+
+#copyButton {
+    background-image: url("assets\greenIcon.png");
+    background-color: transparent;
+    border: none;
+    background-size: cover;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+#copyButton:hover {
+    background-image: url("assets\icon.png");
 }
 
 .Configs {
