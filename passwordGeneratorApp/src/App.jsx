@@ -1,6 +1,8 @@
 import './App.css'
+import { useState } from 'react';
 
 function App() {
+  const[data,setData] = useState(0)
   return(
     <div class='App'>
       <h1>Password Generator</h1>
@@ -13,9 +15,9 @@ function App() {
         <div id='length'>
           <div id='valores'>
           <label htmlFor="scrollBar">Character Length</label>
-          <span id='rangeResult'>0</span>
+          <span id='rangeResult'>{data}</span>
           </div>
-          <input type="range"  name="slider" id="slider" />
+          <input type="range" min='1' max='10' value={data} name="slider" id="slider" onChange={(e)=>setData(e.target.value)}/> 
         </div>
 
         <div id='checkBoxes'>
@@ -44,7 +46,6 @@ function App() {
             <div id="bar2" class="bars bar2"></div>
             <div id="bar3" class="bars bar3"></div>
             <div id="bar4" class="bars bar4"></div>
-
           </div>
         </div>
         <div class="generateBtn">

@@ -55,6 +55,7 @@
 
 #length label {
     margin-bottom: 1rem;
+    text-wrap: nowrap;
 }
 
 #valores {
