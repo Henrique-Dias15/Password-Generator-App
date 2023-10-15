@@ -26,7 +26,7 @@ function App() {
   
   const value = (e) => {
     setData(e);
-    var color = 'linear-gradient(90deg, rgb(164, 255, 171)' + ((e*10)-5) + '%, rgb(19,18,26)' + ((e*10)-5) + '%)';
+    var color = 'linear-gradient(90deg, rgb(164, 255, 171)' + ((e/17)*100) + '%, rgb(19,18,26)' + ((e/17)*100) + '%)';
     slider.style.background = color;
   }
 
@@ -63,7 +63,7 @@ function App() {
           <label htmlFor="scrollBar">Character Length</label>
           <span id='rangeResult'>{data}</span>
           </div>
-          <input type="range" min='1' max='10' value={data} name="slider" id="slider" onChange={(e) => value(e.target.value)}/> 
+          <input type="range" min='0' max='17' value={data} name="slider" id="slider" onChange={(e) => value(e.target.value)}/> 
         </div>
 
         <div id='checkBoxes'>
