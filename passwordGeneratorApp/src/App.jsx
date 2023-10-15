@@ -37,7 +37,7 @@ function App() {
     var symbols = '!@#$%&*';
     var characters = (check1 ? upperCases : '') + (check2 ? lowerCases : '') + (check3 ? numbers : '') + (check4 ? symbols : '');
         
-    var lenString = 7;  
+    var lenString = data;  
     var randomstring = '';  
     
     for (var i=0; i<lenString; i++) {  
@@ -45,7 +45,7 @@ function App() {
     randomstring += characters.substring(rnum, rnum+1);  
     }  
     
-    document.getElementById('result').innerHTML = randomstring;  
+    document.getElementById('result').innerHTML = randomstring.length != 0 ? randomstring : 'Nada selecionado';  
     }  
 
   return(
