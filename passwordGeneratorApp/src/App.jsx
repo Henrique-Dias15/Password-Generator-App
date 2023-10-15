@@ -3,11 +3,50 @@ import { useState } from 'react';
 
 function App() {
   const[data,setData] = useState(0)
+  const[check1, setCheck1] = useState(false);
+  const[check2, setCheck2] = useState(false);
+  const[check3, setCheck3] = useState(false);
+  const[check4, setCheck4] = useState(false);
+
+  const checked1 = (e) => {
+    setCheck1(e);
+  }
+
+  const checked2 = (e) => {
+    setCheck2(e);
+  }
+
+  const checked3 = (e) => {
+    setCheck3(e);
+  }
+
+  const checked4 = (e) => {
+    setCheck4(e);
+  }
+  
   const value = (e) => {
     setData(e);
     var color = 'linear-gradient(90deg, rgb(164, 255, 171)' + ((e*10)-5) + '%, rgb(19,18,26)' + ((e*10)-5) + '%)';
     slider.style.background = color;
   }
+
+  const randomPassword = () => {  
+    var upperCases = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  
+    var lowerCases = 'abcdefgihjklmnopqrstuvwxyz';
+    var numbers = '1234567890';
+    var symbols = '!@#$%&*';
+    var characters = (check1 ? upperCases : '') + (check2 ? lowerCases : '') + (check3 ? numbers : '') + (check4 ? symbols : '');
+        
+    var lenString = 7;  
+    var randomstring = '';  
+    
+    for (var i=0; i<lenString; i++) {  
+    var rnum = Math.floor(Math.random() * characters.length);  
+    randomstring += characters.substring(rnum, rnum+1);  
+    }  
+    
+    document.getElementById('result').innerHTML = randomstring;  
+    }  
 
   return(
     <div class='App'>
@@ -29,19 +68,19 @@ function App() {
 
         <div id='checkBoxes'>
           <div>
-            <input type='checkbox' id='includeUppercase'/>
+            <input type='checkbox' id='includeUppercase' onChange={(e) => checked1(e.target.checked)}/>
             <label htmlFor="includeUppercase">Include Uppercase Letters</label>
           </div>
           <div>
-            <input type='checkbox' id='includeLowercase'/>
+            <input type='checkbox' id='includeLowercase' onChange={(e) => checked2(e.target.checked)}/>
             <label htmlFor="includeLowercase">Include Lowercase Letters</label>
           </div>
           <div>
-            <input type='checkbox' id='includeNumbers'/>
+            <input type='checkbox' id='includeNumbers' onChange={(e) => checked3(e.target.checked)}/>
             <label htmlFor="includeNumbers">Include Numbers</label>
           </div>
           <div>
-            <input type='checkbox' id='includeSymbols'/>
+            <input type='checkbox' id='includeSymbols'onChange={(e) => checked4(e.target.checked)}/>
             <label htmlFor="includeSymbols">Include Symbols</label>
           </div>
         </div>
@@ -56,7 +95,7 @@ function App() {
           </div>
         </div>
         <div class="generateBtn">
-        <button id="generateBtn" class="button">GENERATE<svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg></button> 
+        <button id="generateBtn" class="button" onClick={() => randomPassword()}>GENERATE<svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg></button> 
         </div>
       </div>
     </div>
