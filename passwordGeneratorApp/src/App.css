@@ -1,8 +1,8 @@
+/* Geral */
 @font-face { 
     font-family: Code Saver; 
     src: url(assets/CodeSaver-Regular.otf); 
 } 
-
 
 * {
     padding: 0;
@@ -23,12 +23,14 @@
     color: #DEDDE5;
 }
 
+/* Titulo */
 .App h1{
     color: #757283;
     margin-bottom: 2rem;
     font-size: 1.5rem;
 }
 
+/* Mostrar a senha */
 .Resultado {
     display: flex;
     justify-content: space-between;
@@ -56,6 +58,7 @@
     background-image: url("assets\icon.png");
 }
 
+/* Opções da senha */
 .Configs {
     height: 28rem;
     width: 30rem;
@@ -63,6 +66,7 @@
     padding: 1.5rem;
 }
 
+/* Barra de tamanho */
 #length {
     display: flex;
     flex-direction: column;
@@ -82,21 +86,13 @@
     margin-left: 17rem;
 }
 
-#length input {
+#slider{
     appearance: none;
-    color: #fff;
-    cursor: pointer;
-    accent-color: white;
-  }
-
+    background: linear-gradient(90deg, rgb(19,18,26) 100%, rgb(19,18,26) 100%);
+}
 
  #length input::-webkit-slider-runnable-track {
-    background-color: #18161F;
-    background-image: linear-gradient(#A4FFAB,#A4FFAB);
-    background-size: 30% 100%;
-    background-repeat: no-repeat;
     height: 0.5rem;
-    
 } 
 
  #length input::-webkit-slider-thumb {
@@ -114,9 +110,7 @@
     -webkit-appearance: none;
 }
 
-
-
- 
+/* Opções de include */
 #checkBoxes {
     height: 10rem;
     display: flex;
@@ -156,9 +150,8 @@
     bottom: 3px;
 }
 
-
+/* Barra de força */
 #strength{
- 
     padding: 1rem;
     background-color: #13121A;
     display: flex;
@@ -200,6 +193,28 @@
     margin-left: 0.5rem;
     
 }
+
+.tooWeak {
+    background-color: red;
+    border: 2px solid red;
+}
+  
+.weak {
+    background-color: orange;
+    border: 2px solid orange;
+}
+  
+.medium {
+    background-color: yellow;
+    border: 2px solid yellow;
+}
+  
+.strong {
+    background-color: #A4FFAB;
+    border: 2px solid #A4FFAB;
+}
+
+/* Botão de generate */
 .button {
     width: 100%;
     padding-top: 1.125rem;
@@ -232,25 +247,6 @@
 }
 
 
-.tooWeak {
-    background-color: red;
-    border: 2px solid red;
-  }
-  
-  .weak {
-    background-color: orange;
-    border: 2px solid orange;
-  }
-  
-  .medium {
-    background-color: yellow;
-    border: 2px solid yellow;
-  }
-  
-  .strong {
-    background-color: #A4FFAB;
-    border: 2px solid #A4FFAB;
-  }
 
 
 /* #checkBoxes input:checked:after {

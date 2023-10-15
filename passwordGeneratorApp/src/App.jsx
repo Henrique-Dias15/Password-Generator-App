@@ -3,6 +3,12 @@ import { useState } from 'react';
 
 function App() {
   const[data,setData] = useState(0)
+  const value = (e) => {
+    setData(e);
+    var color = 'linear-gradient(90deg, rgb(164, 255, 171)' + ((e*10)-5) + '%, rgb(19,18,26)' + ((e*10)-5) + '%)';
+    slider.style.background = color;
+  }
+
   return(
     <div class='App'>
       <h1>Password Generator</h1>
@@ -18,7 +24,7 @@ function App() {
           <label htmlFor="scrollBar">Character Length</label>
           <span id='rangeResult'>{data}</span>
           </div>
-          <input type="range" min='1' max='10' value={data} name="slider" id="slider" onChange={(e)=>setData(e.target.value)}/> 
+          <input type="range" min='1' max='10' value={data} name="slider" id="slider" onChange={(e) => value(e.target.value)}/> 
         </div>
 
         <div id='checkBoxes'>
