@@ -10,24 +10,128 @@ function App() {
 
   const checked1 = (e) => {
     setCheck1(e);
+    checkStrength();
   }
 
   const checked2 = (e) => {
     setCheck2(e);
+    checkStrength();
   }
 
   const checked3 = (e) => {
     setCheck3(e);
+    checkStrength();
   }
 
   const checked4 = (e) => {
     setCheck4(e);
+    checkStrength();
   }
   
   const value = (e) => {
     setData(e);
+    checkStrength();
     var color = 'linear-gradient(90deg, rgb(164, 255, 171)' + ((e/17)*100) + '%, rgb(19,18,26)' + ((e/17)*100) + '%)';
     slider.style.background = color;
+   
+  }
+
+
+
+
+
+  const checkStrength = () => {
+    let length = parseInt(data)
+
+    if (length == 0 || (!check1 && !check2 && !check3 && !check4))
+    {
+        setTooWeak()
+        return;
+    }
+    let strengthLvl = 0;
+    if (check1)
+    {
+        strengthLvl += 2;
+    }
+    if (check2)
+    {
+        strengthLvl += 2;
+    }
+    if (check3)
+    {
+        strengthLvl += 1;
+    }
+    if (check4)
+    {
+        strengthLvl += 1;
+    }
+    
+    if (length < 6)
+    {
+        setTooWeak();
+    }
+    else
+    {
+        let strength = strengthLvl * length;
+        console.log(strength);
+        if (strength < 10)
+        {
+            setTooWeak();
+        }
+        else if (strength < 30)
+        {
+            setWeak();
+        }
+        else if (strength < 50)
+        {
+            setMedium();
+        }
+        else
+        {
+            setStrong();
+        }
+    }
+  }
+
+  const setTooWeak = () => {
+    document.getElementById('levelTxt').innerHTML = "TOO WEAK"
+      document.getElementById('bar1').className = "bars bar1 tooWeak";
+      document.getElementById('bar2').className = "bars bar2";
+      document.getElementById('bar3').className = "bars bar3";
+      document.getElementById('bar4').className = "bars bar4";
+
+  }
+
+
+  const setWeak = () => {
+    document.getElementById('levelTxt').innerHTML = "WEAK"
+      document.getElementById('bar1').className = "bars bar1 weak";
+      document.getElementById('bar2').className = "bars bar2 weak";
+      document.getElementById('bar3').className = "bars bar3";
+      document.getElementById('bar4').className = "bars bar4";
+
+  }
+
+  
+  const setMedium = () => {
+    document.getElementById('levelTxt').innerHTML = "MEDIUM"
+      document.getElementById('bar1').className = "bars bar1 medium";
+      document.getElementById('bar2').className = "bars bar2 medium";
+      document.getElementById('bar3').className = "bars bar3 medium";
+      document.getElementById('bar4').className = "bars bar4";
+
+  }
+
+
+
+
+  const setStrong = () => {
+    document.getElementById('levelTxt').innerHTML = "STRONG"
+      document.getElementById('bar1').className = "bars bar1 strong";
+      document.getElementById('bar2').className = "bars bar2 strong";
+      document.getElementById('bar3').className = "bars bar3 strong";
+      document.getElementById('bar4').className = "bars bar4 strong";
+
   }
 
   const randomPassword = () => {  
